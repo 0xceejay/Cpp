@@ -8,7 +8,9 @@ double getTowerHeight() {
 }
 
 double calculateBallHeight(double towerHeight, int seconds) {
-    double newHeight {towerHeight - (9.81 * seconds * seconds) / 2.0};
+    const double g {9.81}; // Acceleration due to gravity in m/s^2
+    double newHeight {towerHeight - (g * seconds * seconds) / 2.0};
+
     if (newHeight > 0) {
         std::cout << "At " << seconds << " seconds, the ball is at height: " << newHeight << " meters\n";
     } else {
